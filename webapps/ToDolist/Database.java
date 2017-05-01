@@ -33,25 +33,24 @@ public class Database
       System.out.println(ex);
     }
   }
-  public void insertData(String name , String location , String photo , String description){
+  public void insertData(String name, String description, String photo){
     try{
-      String sql = "insert into travel (name, location , photo , description) values (?,?,?,?)";
+      String sql = "insert into todolist (name, description, photo) values (?,?,?)";
       PreparedStatement ps = con.prepareStatement(sql);
       ps.setString(1,name);
-      ps.setString(2,location);
+      ps.setString(2,description);
       ps.setString(3,photo);
-      ps.setString(4,description);
       int a = ps.executeUpdate();
     }catch(Exception ex){
       System.out.println(ex);
     }
   }
-  public void editData(String id ,String name , String location , String photo , String description){
+  public void editData(String id ,String name, String description, String photo){
     try{
       System.out.println("name = " + name);
       System.out.println("description = " + description);
       System.out.println("photo = " + photo);
-      String sql = "update travel set name = '" + name + "', description = '" + description + "' , photo = '" + photo + "' where id = " + id;
+      String sql = "update todolist set name = '" + name + "', description = '" + description + "' , photo = '" + photo + "' where id = " + id;
       int a = stmt.executeUpdate(sql);
     }catch(Exception e){
       System.out.println(e);

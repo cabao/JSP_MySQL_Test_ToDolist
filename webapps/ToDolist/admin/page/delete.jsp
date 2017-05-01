@@ -122,7 +122,7 @@
                   <div class="col-sm-12">
                       <div class="white-box">
                           <h3 class="box-title"><%=p_name%></h3>
-                          <p>照片：<img src="<%=p_photo%>"/></p>
+                          <p>照片：<img src="<%=p_photo%>" width="30px" length="30px"/></p>
                           <p>描述：<%=p_description%></p>
                           <button class="btn btn-primary" onclick="window.open('index.jsp','_self')">確定</button>
                         </div>
